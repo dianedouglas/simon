@@ -1,5 +1,9 @@
-//var pingPong = require('./../js/ping-pong.js').pingPong;
+var Journal = require('./../js/journal.js').Journal;
 $(document).ready(function(){
-  alert('hi!');
-  console.log('whatever');
+  $('#journal').submit(function(event){
+    event.preventDefault();
+    var bodyText = $('#body').val();
+    var newJournal = new Journal(bodyText);
+    console.log(newJournal.read());
+  });
 });
